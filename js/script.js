@@ -2,15 +2,15 @@
   1. Salvare le info sugli sconti (20% e 40%), sull'età (minorenne e over65) e sul prezzo del biglietto (0.21 euro/km) 
   2. Salvare con comando prompt l'età del passeggero e i chilometri da percorre
   3. Calcola il costo del viaggio senza sconti
-  3. Calcola il costo finale del viaggio considerando l'età
-  3. Stampa il costo finale, indicando anche i centesimi
+  4. Calcola il costo finale del viaggio considerando l'età
+  5. Stampa il costo finale, indicando anche i centesimi
 */
 
 // 1.
-const underage = 18;
-const discountUnderage = 0.20;
 const elderage = 65;
 const discountElderage = 0.40;
+const underage = 18;
+const discountUnderage = 0.20;
 const euroKm = 0.21;
 
 
@@ -27,13 +27,13 @@ const initialCost = distance * euroKm;
 let finalCost;
 
 if ( age >= elderage ) {
-  finalCost = initialCost * discount20;
+  finalCost = parseFloat(initialCost * (1 - discountElderage)).toFixed(2);
 }
 else if ( age < underage ) {
-  finalCost = initialCost * discount40;
+  finalCost = parseFloat(initialCost * (1 - discountUnderage)).toFixed(2);
 }
 else {
-  finalCost = initialCost;
+  finalCost = parseFloat(initialCost).toFixed(2);
 }
 
 
