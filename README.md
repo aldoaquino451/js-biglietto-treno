@@ -15,5 +15,5 @@ L’output del prezzo finale va messo fuori in forma umana (con massimo **due de
 ### Javascript
 
 1. Salvare le info sugli sconti (20% e 40%), sull'età (minorenne e over65) e sul prezzo del bigletto (0.21 euro/km) 
-2.  Salvare con comando prompt l'età del passeggero e i chilometri da parcorre
+2. Salvare con comando prompt l'età del passeggero e i chilometri da parcorre
 3. Stampa il costo finale del viaggio, indicando anche i centesimi
