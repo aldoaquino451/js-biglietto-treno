@@ -15,8 +15,8 @@ const euroKm = 0.21;
 
 
 // 2.
-const age = parseInt(prompt("Qual è la tua età?"));
 const distance = parseInt(prompt("Quanti chilometri deve percorrere?"));
+const age = parseInt(prompt("Qual è la tua età?"));
 
 
 // 3. 
@@ -27,10 +27,10 @@ const initialCost = distance * euroKm;
 let finalCost;
 
 if ( age >= elderage ) {
-  finalCost = parseFloat(initialCost * (1 - discountElderage)).toFixed(2);
+  finalCost = parseFloat(initialCost * (initialCost - discountElderage)).toFixed(2);
 }
 else if ( age < underage ) {
-  finalCost = parseFloat(initialCost * (1 - discountUnderage)).toFixed(2);
+  finalCost = parseFloat(initialCost * (initialCost - discountUnderage)).toFixed(2);
 }
 else {
   finalCost = parseFloat(initialCost).toFixed(2);
