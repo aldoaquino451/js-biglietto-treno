@@ -6,10 +6,9 @@
   5. Stampa il costo finale, indicando anche i centesimi
 */
 
+
 // 1.
-const elderage = 65;
 const discountElderage = 0.40;
-const underage = 18;
 const discountUnderage = 0.20;
 const euroKm = 0.21;
 
@@ -23,26 +22,41 @@ const age = parseInt(prompt("Qual è la tua età?"));
 const initialCost = distance * euroKm;
 
 
+// 3.5
+let insertOk = true;
+let message;
+
+if ( isNaN(distance) || isNaN(age)) {
+  insertOk = false;
+  message = 'Errore! Dati non corretti';
+} 
+
+document.querySelector
+
 // 4.
 let finalCost;
 
-if ( age >= elderage ) {
-  finalCost = parseFloat(initialCost * (initialCost - discountElderage)).toFixed(2);
+if ( insertOk ) {
+
+  message = 'ok';
+
+  if ( age >= 65 ) {
+    finalCost = parseFloat(initialCost * (initialCost - discountElderage)).toFixed(2);
+  }
+  else if ( age < 18 ) {
+    finalCost = parseFloat(initialCost * (initialCost - discountUnderage)).toFixed(2);
+  }
+  else {
+    finalCost = parseFloat(initialCost).toFixed(2);
+  }
+
 }
-else if ( age < underage ) {
-  finalCost = parseFloat(initialCost * (initialCost - discountUnderage)).toFixed(2);
-}
-else {
-  finalCost = parseFloat(initialCost).toFixed(2);
-}
 
+// 4.
+console.log(message)
+document.getElementById('message').innerHTML = message;
 
-// 4. 
-const output = document.getElementById("message");
-
-output.innerHTML = `
-  Il costo totale del viaggio sarà di 
-  <strong>${finalCost} &euro;</strong>
-`;
-
-
+// message = `
+// Il costo totale del viaggio sarà di 
+// <strong>${finalCost} &euro;</strong>
+// `;
